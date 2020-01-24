@@ -8,9 +8,10 @@
  #ifndef	STD_Types_H_
  #define	STD_Types_H_
  
- //#define NULL 			'\0'					     /* 0 */
- //#define NULL_CHAR 		'\0'						 /* 0 */
- #define NULL_POINTER	((void *)0xFFFF)			 // 2 byte address bus or (void *)NULL
+ #define NULL 			'\0'					     /* 0 */
+ #define NULL_CHAR 		'\0'						 /* 0 */
+ #define NULL_POINTER_EMB	((void *)0xFFFF)			 // 2 byte address bus or (void *)NULL
+ #define NULL_POINTER	((void *) NULL)			 // 2 byte address bus or (void *)NULL
  
  typedef unsigned char 	u8; 						 // 1 byte = 8 bit
  typedef signed char 	s8;							 // 1 byte = 8 bit
