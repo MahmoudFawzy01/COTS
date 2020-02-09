@@ -1,10 +1,10 @@
-/*
- * BIT_MATH.H
- *
- *  Created on: Oct 10, 2019
- *      Author: Mahmoud Fawzy
- */
- 
+ /***************************************************/
+ /* BIT_MATH.H										*/
+ /*  Created on: Oct 10, 2019						*/
+ /*      Author: Mahmoud Fawzy						*/
+ /*  Version: V02									*/
+ /***************************************************/
+
  
  #ifndef BIT_MATH_H_
  #define BIT_MATH_H_
@@ -37,5 +37,12 @@
  #define SET_HIGH_NIBLE(REG) 				((REG) |= (0xf0))							// assgin the HIGH NIBLE of the reg  with 1 (or the reg with 1)
  #define TOGGLE_HIGH_NIBLE(REG) 			((REG) ^= (0xf0))							// (bitwise exclusive or [^]) with the HIGH NIBLE of the reg to toggle from 0 to 1 and from 1 to 0
  #define ASSIGN_HIGH_NIBLE(REG,VALUE) 		(REG)   = ((REG) & (0x0f)) | ((VALUE)<<4)	// ASSIGN a new value to the HIGH NIBLE of the reg
+
+ // 4 bits operations
+ #define GET_4BITS(VAR,BITS_INDEX) 				((VAR >> (4*BITS_INDEX)) & 0xF)		// GET the bits value at the 4 bits index of the reg
+ #define CLR_4BITS(VAR,BITS_INDEX) 				((VAR) &=~ ((0xF)<<(4*BITS_INDEX)))		// and 0 with the HIGH NIBLE of the reg to clr(set to 0)
+ #define SET_4BITS(VAR,BITS_INDEX)				((VAR) |=  ((0xF)<<(4*BITS_INDEX)))							// assgin the HIGH NIBLE of the reg  with 1 (or the reg with 1)
+ #define TOGGLE_4BITS(VAR,BITS_INDEX)			((VAR) ^=  ((0xF)<<(4*BITS_INDEX)))							// (bitwise exclusive or [^]) with the HIGH NIBLE of the reg to toggle from 0 to 1 and from 1 to 0
+ #define ASSIGN_4BITS(VAR,BITS_INDEX,VALUE) 	(VAR)   = (((VAR) & ~((0xF)<<(4*BITS_INDEX))) | ((VALUE&0xF)<<(4*BITS_INDEX)))	// ASSIGN a new value to the HIGH NIBLE of the reg
  
  #endif	/* BIT_MATH_H_ */
